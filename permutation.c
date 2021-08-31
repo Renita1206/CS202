@@ -22,7 +22,6 @@ void permute(char *a, int begin, int end)
         {
             swap((a+begin), (a+i));
             permute(a, begin+1, end);
-            swap((a+begin), (a+i));
         }
     }
 }
