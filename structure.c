@@ -14,7 +14,7 @@ typedef struct student
     char name[100];
     int srn;
     int sem;
-    M marks[2];
+    M marks[5];
 }S;
 
 int main()
@@ -46,7 +46,7 @@ int main()
     int sum=0,count=0;
     for(int i=0;i<n;i++)
     {
-        for(int j=0;j<2;j++)
+        for(int j=0;j<5;j++)
         {
             if(strcmp(subject,(record[i].marks[j].code))==0)
             {
