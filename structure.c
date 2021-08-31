@@ -40,6 +40,7 @@ int main()
         printf("\n Enter marks: ");
         scanf("%d",&record[i].marks[1].score);
     }
+    
     char subject[10];
     printf("\n Enter subject code to calculate average: ");
     scanf("%s",subject);
@@ -59,7 +60,6 @@ int main()
     printf("%d",avg);
 
     //sort by srn
-
     for(int i=0;i<n;i++)
     {
         int pos=i;
@@ -76,6 +76,7 @@ int main()
             record[i]=r1;
         }
     }
+
     //print sorted array
     for(int i=0;i<n;i++)
     {
@@ -83,5 +84,6 @@ int main()
         printf("%d\t",record[i].srn);
         printf("%d\n",record[i].sem);
     }
+
     return 0;
 }

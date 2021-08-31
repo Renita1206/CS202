@@ -29,7 +29,9 @@ void permute(char *a, int begin, int end)
  
 int main()
 {
-    char str[] = "ABCD";
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s",str);
     int n = strlen(str);
     permute(str, 0, n-1);
     return 0;
