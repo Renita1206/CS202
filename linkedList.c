@@ -18,47 +18,52 @@ typedef struct node
     struct node *link;
 }Node;
 
-void front_insert(Node *p,int x);
-void back_insert(Node *p, int x);
-void front_delete(Node *p);
-void back_delete(Node *p);
-void pos_insert(Node *p, int x, int pos);
-void pos_delete(Node *p, int pos);
-void display(Node *p);
+void front_insert(Node **p,int x);
+void back_insert(Node **p, int x);
+void front_delete(Node **p);
+void back_delete(Node **p);
+void pos_insert(Node **p, int x, int pos);
+void pos_delete(Node **p, int pos);
+void display(Node **p);
 
-void front_insert(Node *p,int x)
+void front_insert(Node **p,int x)
 {
     Node *tmp;
     tmp=(Node*)malloc(sizeof(Node));
     tmp->data=x;
     tmp->link=NULL;
-    if(p==NULL)    //no nodes present in list
+    if(*p==NULL)    //no nodes present in list
     {
-        p=tmp;
+        *p=tmp;
     }
     else
     {
-        tmp->link=p;
-        p=tmp;
+        tmp->link=*p;
+        *p=tmp;
     }
 }
 
-void display(Node *p)
+void display(Node **p)
 {
     Node *tmp;
     tmp=(Node*)malloc(sizeof(Node));
-    tmp=p;
-    while(tmp->link!=NULL)
+    tmp=*p;
+    if(*p==NULL)
+        printf("Empty list\n");
+    else
     {
-        printf("%d\t",tmp->data);
-        tmp=tmp->link;
+        while(tmp!=NULL)
+        {
+            printf("%d\t",tmp->data);
+            tmp=tmp->link;
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
 int main()
 {
-    Node *p=(Node*)malloc(sizeof(Node));
+    Node *p=NULL;
     int choice;
     int x,pos;
 
@@ -73,12 +78,14 @@ int main()
         printf("6.Delete node at given position\n");
         printf("7.Exit\n");
 
+        scanf("%d",&choice);
+
         switch(choice)
         {
             case 1: //Inserting node at the beginnning of the list
                     printf("\nEnter the value to store: ");
                     scanf("%d",&x);
-                    //front_insert(&p,x);
+                    front_insert(&p,x);
                     break;
             
             case 2: //Inserting node at the end of the list
@@ -116,7 +123,7 @@ int main()
             default: printf("\nInvalid entry");
         }
 
-        display(p);
+        display(&p);
 
     }
     return 0;
