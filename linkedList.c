@@ -43,6 +43,27 @@ void front_insert(Node **p,int x)
     }
 }
 
+void back_insert(Node **p,int x)
+{
+    Node *tmp,*prev;
+    tmp=(Node*)malloc(sizeof(Node));
+    tmp->data=x;
+    tmp->link=NULL;
+    prev=*p;
+    if(*p==NULL)    //no nodes present in list
+    {
+        *p=tmp;
+    }
+    else
+    {
+        while(prev->link!=NULL)
+        {
+            prev=prev->link;
+        }
+        prev->link=tmp;
+    }
+}
+
 void display(Node **p)
 {
     Node *tmp;
@@ -91,7 +112,7 @@ int main()
             case 2: //Inserting node at the end of the list
                     printf("\nEnter the value to store: ");
                     scanf("%d",&x);
-                    //back_insert(&p,x);
+                    back_insert(&p,x);
                     break;
             
             case 3: //Deleting first node
