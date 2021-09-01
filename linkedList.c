@@ -64,6 +64,29 @@ void back_insert(Node **p,int x)
     }
 }
 
+void front_delete(Node **p)
+{
+    Node *tmp;
+    tmp=(Node*)malloc(sizeof(Node));
+    tmp=*p;
+
+    if(*p==NULL)    //no nodes present in list
+    {
+        printf("Empty list\n");
+    }
+    else if(tmp->link==NULL)
+    {
+        printf("\nDeleting element %d \n",tmp->data);
+        *p=NULL;
+    }
+    else
+    {
+        printf("\nDeleting element %d \n",tmp->data);
+        tmp=tmp->link;
+        **p=*tmp;
+    }
+}
+
 void display(Node **p)
 {
     Node *tmp;
@@ -116,7 +139,7 @@ int main()
                     break;
             
             case 3: //Deleting first node
-                    //front_delete(&p);
+                    front_delete(&p);
                     break;
             
             case 4: //Deleting last node
