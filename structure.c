@@ -57,7 +57,7 @@ int main()
         }
     }
     int avg=sum/count;
-    printf("%d",avg);
+    printf("Average: %d\n",avg);
 
     //sort by srn
     for(int i=0;i<n;i++)

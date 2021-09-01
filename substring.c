@@ -26,10 +26,13 @@ int main()
 {
     char str[1000],substring[1000];
     printf("\nEnter the string: ");
-    scanf("%s",str);
+    scanf("%[^\n]%*c",str);
     printf("\nEnter the substring: ");
-    scanf("%s",substring);
+    scanf("%[^\n]%*c",substring);
     int result=check(str,substring,substring);
-    printf("%d",result);
+    if(result==1)
+        printf("TRUE");
+    else
+        printf("FALSE");
     return 0;
 }

@@ -5,6 +5,7 @@
 
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 
 typedef struct matches
 {
@@ -26,11 +27,12 @@ int main()
     scanf("%[^\n]s",inp); //to input a string with spaces */
     
     int n;
-    P record[100];
 
     //input number of players
     printf("\nEnter the number of players: ");
     scanf("%d",&n);
+
+    P* record = malloc(n * sizeof(P));
 
     //input player details
     for(int i=0;i<n;i++)
