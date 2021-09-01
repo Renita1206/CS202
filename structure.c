@@ -2,6 +2,7 @@
 
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 
 typedef struct mark
 {
@@ -20,9 +21,9 @@ typedef struct student
 int main()
 {
     int n;
-    S record[100];
     printf("Enter the number of students: ");
     scanf("%d",&n);
+    S* record = malloc(n * sizeof(S));
     for(int i=0;i<n;i++)
     {
         printf("\n Enter the name of the student: ");
