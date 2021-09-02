@@ -199,6 +199,20 @@ void pos_delete(Node **p, int pos)
     }
 }
 
+void reverse(Node **p)
+{
+    Node *tmp,*prev,*pres;
+    tmp=(Node *)malloc(sizeof(Node));
+    prev=NULL;
+    pres=*p;
+    tmp=pres;
+    while(tmp->link!=NULL)
+    {
+        //code to reverse linked list
+    }
+    *p=pres;
+}
+
 void display(Node **p)
 {
     printf("\nLinked List\n");
@@ -234,7 +248,8 @@ int main()
         printf("4.Delete the last node\n");
         printf("5.Insert node at given position\n");
         printf("6.Delete node at given position\n");
-        printf("7.Exit\n");
+        printf("7.Reverse the list\n");
+        printf("8.Exit\n");
 
         scanf("%d",&choice);
 
@@ -273,8 +288,12 @@ int main()
                     scanf("%d",&pos);
                     pos_delete(&p,pos);
                     break;
+            
+            case 7: //Reverse the list
+                    reverse(&p);
+                    break;
 
-            case 7: //exiting program
+            case 8: //exiting program
                     exit(0);
                     break;
 
