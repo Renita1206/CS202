@@ -202,15 +202,16 @@ void pos_delete(Node **p, int pos)
 void reverse(Node **p)
 {
     Node *tmp,*prev,*pres;
-    tmp=(Node *)malloc(sizeof(Node));
     prev=NULL;
     pres=*p;
-    tmp=pres;
-    while(tmp->link!=NULL)
+    while(pres!=NULL)
     {
-        //code to reverse linked list
+        tmp=pres->link;
+        pres->link=prev;
+        prev=pres;
+        pres=tmp;
     }
-    *p=pres;
+    *p=prev;
 }
 
 void display(Node **p)
