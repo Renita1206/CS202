@@ -7,6 +7,7 @@ Operations that may be performed -
     Delete last node
     Insert node at given position
     Delete node at given position
+    Reverse linked list
 */
 
 #include<stdio.h>
