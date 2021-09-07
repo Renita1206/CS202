@@ -1,4 +1,4 @@
-// Program to sort linked list
+// Program to delete duplicate nodes in a sorted linked list
 
 #include<stdio.h>
 #include<stdlib.h>
