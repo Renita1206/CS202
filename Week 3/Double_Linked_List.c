@@ -12,11 +12,11 @@ typedef struct node
 
 void front_insert(Node **p, int x);
 void back_insert(Node **p, int x);
+void pos_insert(Node **p, int x, int pos);
 void front_delete(Node **p);
 void back_delete(Node **p);
 void display(Node **p);
 void reverse(Node **p);
-//position insert
 //position delete
 
 void front_insert(Node **p, int x)
@@ -37,6 +37,60 @@ void front_insert(Node **p, int x)
         *p=tmp;
     }
 }
+
+void back_insert(Node **p, int x)
+{
+    Node *tmp, *pres;
+    pres=*p;
+    tmp=(Node*)malloc(sizeof(Node));
+    tmp->data=x;
+    tmp->next=NULL;
+    tmp->prev=NULL;
+    if(*p==NULL)
+    {
+        *p=tmp;
+    }
+    else
+    {
+        while(pres->next!=NULL)
+        {
+            pres=pres->next;
+        }
+        pres->next=tmp;
+        tmp->prev=pres;
+    }
+}
+
+void pos_insert(Node **p, int x, int pos)
+{
+    Node *tmp, *pres;
+    pres=*p;
+    tmp=(Node*)malloc(sizeof(Node));
+    tmp->data=x;
+    tmp->next=NULL;
+    tmp->prev=NULL;
+    int i=1;
+    while(pres!=NULL && pos<i)
+    {
+        pres=pres->next;
+        i++;
+    }
+    if(pos==i)
+    {
+        if(pos==1) //empty list 
+        {
+            *p=tmp;
+        }
+        // else if last
+        //else middle
+    }
+    else // pres==NULL
+    {
+        printf("Invalid position\n");
+    }
+}
+
+//front, end, middle, invalid, empty
 
 void front_delete(Node **p)
 {
@@ -83,29 +137,6 @@ void back_delete(Node **p)
         }
         pres->prev->next=NULL;
         free(pres);
-    }
-}
-
-void back_insert(Node **p, int x)
-{
-    Node *tmp, *pres;
-    pres=*p;
-    tmp=(Node*)malloc(sizeof(Node));
-    tmp->data=x;
-    tmp->next=NULL;
-    tmp->prev=NULL;
-    if(*p==NULL)
-    {
-        *p=tmp;
-    }
-    else
-    {
-        while(pres->next!=NULL)
-        {
-            pres=pres->next;
-        }
-        pres->next=tmp;
-        tmp->prev=pres;
     }
 }
 
