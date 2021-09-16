@@ -70,27 +70,47 @@ void pos_insert(Node **p, int x, int pos) // Incomplete Function
     tmp->next=NULL;
     tmp->prev=NULL;
     int i=1;
-    while(pres!=NULL && pos<i)
+    while(pres!=NULL && pos>i)
     {
         pres=pres->next;
-        i++;
+        i=i+1;
     }
-    if(pos==i)
+    if(pres==NULL)
     {
-        if(pos==1) //empty list 
+        if(pos==1) //empty
+            *p=tmp;
+        else  if(pos==i)      //last
         {
+            pres=*p;
+            while(pres->next!=NULL)
+            {
+                pres=pres->next;
+            }
+            pres->next=tmp;
+            tmp->prev=pres;
+        }
+        else 
+        {
+            printf("Invalid");
+        }
+    }
+    else if(pos==i)
+    {
+        if(pres->prev==NULL) //first
+        {
+            tmp->next=pres;
+            pres->prev=tmp;
             *p=tmp;
         }
-        // else if last
-        //else middle
-    }
-    else // pres==NULL
-    {
-        printf("Invalid position\n");
+        else //middle
+        {
+            pres->prev->next=tmp;
+            tmp->prev=pres->prev;
+            tmp->next=pres;
+            pres->prev=tmp;
+        }
     }
 }
-
-//front, end, middle, invalid, empty
 
 void front_delete(Node **p)
 {
@@ -187,7 +207,7 @@ int main()
         printf("2.Insert node at the end of the list\n");
         printf("3.Delete first node\n");
         printf("4.Delete the last node\n");
-        //printf("5.Insert node at given position\n");
+        printf("5.Insert node at given position\n");
         //printf("6.Delete node at given position\n");
         printf("7.Reverse the list\n");
         printf("8.Exit\n");
@@ -217,11 +237,11 @@ int main()
                     break;
 
             case 5: // Inserting node at given position
-                    //printf("\nEnter the value to store: ");
-                    //scanf("%d",&x);
-                    //printf("\nEnter position at which node must be inserted: ");
-                    //scanf("%d",&pos);
-                    //pos_insert(&p,x,pos);
+                    printf("\nEnter the value to store: ");
+                    scanf("%d",&x);
+                    printf("\nEnter position at which node must be inserted: ");
+                    scanf("%d",&pos);
+                    pos_insert(&p,x,pos);
                     break;
             
             case 6: //Deleting node at given position
