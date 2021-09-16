@@ -12,7 +12,7 @@ typedef struct node
 
 void front_insert(Node **p, int x);
 void back_insert(Node **p, int x);
-void pos_insert(Node **p, int x, int pos);
+void pos_insert(Node **p, int x, int pos); // have to complete
 void front_delete(Node **p);
 void back_delete(Node **p);
 void display(Node **p);
@@ -61,7 +61,7 @@ void back_insert(Node **p, int x)
     }
 }
 
-void pos_insert(Node **p, int x, int pos)
+void pos_insert(Node **p, int x, int pos) // Incomplete Function
 {
     Node *tmp, *pres;
     pres=*p;
