@@ -12,12 +12,12 @@ typedef struct node
 
 void front_insert(Node **p, int x);
 void back_insert(Node **p, int x);
-void pos_insert(Node **p, int x, int pos); // have to complete
+void pos_insert(Node **p, int x, int pos);
 void front_delete(Node **p);
 void back_delete(Node **p);
+void pos_delete(Node **p, int pos);
 void display(Node **p);
 void reverse(Node **p);
-//position delete
 
 void front_insert(Node **p, int x)
 {
@@ -160,6 +160,50 @@ void back_delete(Node **p)
     }
 }
 
+
+void pos_delete(Node **p, int pos) //Cases-> empty, front, middle, end
+{
+    Node *pres;
+    pres=*p;
+    int i=1;
+    if(*p==NULL)
+    {
+        printf("Empty List\n");
+        return;
+    }
+    while(pres!=NULL && pos>i)
+    {
+        pres=pres->next;
+        i++;
+    }
+    if(pos==i)
+    {
+        printf("Deleting element %d\n",pres->data);
+        if(pos==1) //first node or pres->prev==NULL
+        {
+            *p=pres->next;
+            if(pres->next!=NULL)
+                pres->next->prev=NULL;
+            free(pres);
+        }
+        else if(pres->next==NULL)
+        {
+            pres->prev->next=NULL;
+            free(pres); 
+        }
+        else //middle
+        {
+            pres->next->prev=pres->prev;
+            pres->prev->next=pres->next;
+            free(pres);
+        }
+    }
+    else if(pres==NULL)
+    {
+        printf("Invalid Position\n");
+    }
+}
+
 void display(Node **p)
 {
     Node *t;
@@ -208,7 +252,7 @@ int main()
         printf("3.Delete first node\n");
         printf("4.Delete the last node\n");
         printf("5.Insert node at given position\n");
-        //printf("6.Delete node at given position\n");
+        printf("6.Delete node at given position\n");
         printf("7.Reverse the list\n");
         printf("8.Exit\n");
 
@@ -245,9 +289,9 @@ int main()
                     break;
             
             case 6: //Deleting node at given position
-                    //printf("\nEnter position of node to be deleted: ");
-                    //scanf("%d",&pos);
-                    //pos_delete(&p,pos);
+                    printf("\nEnter position of node to be deleted: ");
+                    scanf("%d",&pos);
+                    pos_delete(&p,pos);
                     break;
             
             case 7: //Reverse the list
