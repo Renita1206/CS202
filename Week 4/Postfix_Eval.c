@@ -1,4 +1,4 @@
-// Program to evaluate a ppostfix expression
+// Program to evaluate a postfix expression
 
 #include<stdio.h>
 #include<stdlib.h>

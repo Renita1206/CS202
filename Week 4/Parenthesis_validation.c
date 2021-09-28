@@ -1,7 +1,5 @@
 // Program to validate parenthesis in an expression
 
-// Program to evaluate a ppostfix expression
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
