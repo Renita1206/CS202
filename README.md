@@ -3,4 +3,7 @@
 * Week 1 - Recursion and Structures  
 * Week 2 - Single Linked List  
 * Week 3 - Double Linked List  
-* Week 4 - Stacks
+* Week 4 - Circular Linked List and Stacks  
+* Week 5 - Queues  
+* Week 6 - Double Ended Queues  
+* Week 7 - Binary Search Trees
