@@ -97,3 +97,7 @@ ISA Week
     Implement insert function of binary search tree by comparing the strings.
     Also implement a function to print all sorted SRN in ascending order.
     Implement a Search function to search for an input SRN in tree.
+
+## Week 8 (25th - 30th)
+- Create a binary expression tree and evaluate result
+- Delete a node from Binary Search Tree and reconstruct the tree after deletion

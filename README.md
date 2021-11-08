@@ -6,4 +6,5 @@
 * Week 4 - Circular Linked List and Stacks  
 * Week 5 - Queues  
 * Week 6 - Double Ended Queues  
-* Week 7 - Binary Search Trees
+* Week 7 - Binary Search Trees  
+* Week 8 - Expression Tree
