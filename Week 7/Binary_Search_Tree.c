@@ -38,8 +38,6 @@ int main()
                 printf("level is %d\n",l);
                 printf("height is %d\n",l+1);
         }
-        
-        
         return 0;
 }
 
