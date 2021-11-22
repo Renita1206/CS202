@@ -99,5 +99,11 @@ ISA Week
     Implement a Search function to search for an input SRN in tree.
 
 ## Week 8 (25th - 30th)
-- Create a binary expression tree and evaluate result
-- Delete a node from Binary Search Tree and reconstruct the tree after deletion
+-   Create a binary expression tree and evaluate result
+-   Delete a node from Binary Search Tree and reconstruct the tree after deletion
+
+## Week 9
+-   Check connectivity of a graph using DFS and compute components  
+-   Traverse graph using BFS, use queue 
+
+## Week 10

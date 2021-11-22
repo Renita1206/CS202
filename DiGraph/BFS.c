@@ -1,3 +1,5 @@
+// BFS implementation using arrays
+
 #include<stdio.h>
 
 int a[100][100];
