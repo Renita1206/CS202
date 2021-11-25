@@ -103,7 +103,9 @@ ISA Week
 -   Delete a node from Binary Search Tree and reconstruct the tree after deletion
 
 ## Week 9
--   Check connectivity of a graph using DFS and compute components  
--   Traverse graph using BFS, use queue 
+ -  Write a program to insert a mobile number along with name into a hash table. Add functions to delete, search and display.  
+    Handle collision using seperate chaining and linear probing.
 
 ## Week 10
+-   Check connectivity of a graph using DFS and compute components  
+-   Traverse graph using BFS, use queue
