@@ -1,3 +1,5 @@
+//Check connectivity of graph and compute number of components
+
 #include<stdio.h>
 #include <stdlib.h>
 #define max 10

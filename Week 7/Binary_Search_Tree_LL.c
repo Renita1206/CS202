@@ -1,3 +1,5 @@
+//Binary Search Tree using Linked Lists
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -28,9 +30,9 @@ int main()
 		switch(choice)
 		{
 			case 1: printf("enter the value to insert\n");
-				scanf("%d",&num);
-				root=insert(root,num);
-				break;
+					scanf("%d",&num);
+					root=insert(root,num);
+					break;
 
 			case 2: preorder(root); break;
 
