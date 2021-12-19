@@ -1,14 +1,4 @@
-/*
-Program implementing linked list
-Operations that may be performed - 
-    Insert node at the beginning
-    Insert node at the end
-    Delete first node
-    Delete last node
-    Insert node at given position
-    Delete node at given position
-    Reverse linked list
-*/
+//linked list
 
 #include<stdio.h>
 #include<stdlib.h>
