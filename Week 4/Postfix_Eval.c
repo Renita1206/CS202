@@ -27,7 +27,6 @@ int eval(char* inp)
     char ch;
     int top=-1;      // top variable for stack
     int i=0;
-    int top1=-1;    // top variable for postfix
     int a,r;
     while(inp[i]!='\0')
     {

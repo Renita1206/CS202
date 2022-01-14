@@ -10,6 +10,7 @@ struct node
 void display(struct node *f, struct node *r);
 void insert_rear(int x, struct node**f, struct node **r);
 int delete_front(struct node **f,struct node **r);
+
 int main()
 {
 	struct node *f,*r;
@@ -32,37 +33,29 @@ int main()
 		}
 	}
 }
+
 int delete_front(struct node **f,struct node **r)
 {
 	struct node *q;
 	int x;
 	q=*f;
-	
 	if(*f==NULL)
-		{
+	{
 		printf("List is empty\n");
 		return -1;
-		}
+	}
 	x=q->data;
 	if(*f==*r)
-		{
+	{
 		*f=*r=NULL;
-		}
+	}
 	else
-		{
+	{
 		(*f)=q->next;
-		}
-		free(q);
+	}
+	free(q);
 	return x;
 }	
-
-
-
-
-
-
-
-
 
 void insert_rear(int x, struct node**f, struct node **r)
 {
